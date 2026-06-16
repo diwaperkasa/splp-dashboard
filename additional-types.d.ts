@@ -1,3 +1,5 @@
+import 'react'; 
+
 declare module '@coreui/coreui';
 
 declare module 'react' {
