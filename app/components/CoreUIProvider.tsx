@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { Sidebar } from '@coreui/coreui/dist/js/coreui.esm.min.js';
 
 export default function CoreUIProvider() {
   useEffect(() => {
