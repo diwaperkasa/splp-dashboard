@@ -72,7 +72,7 @@ export default function FormWizard() {
                 if (formThree.current) {
                     const form = formThree.current as HTMLFormElement
                     if (form.checkValidity()) {
-                        handleSubmit(new Event('submit') as React.FormEvent)
+                        handleSubmit(new Event('submit') as unknown as React.FormEvent)
                     } else {
                         form.reportValidity()
                     }
@@ -95,7 +95,7 @@ export default function FormWizard() {
         }
     }
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: any) => {
         e.preventDefault()
 
         console.log('Form Data Submitted:', formData)

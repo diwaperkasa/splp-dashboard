@@ -1,17 +1,19 @@
 "use client";
 
-// import * as coreui from '@coreui/coreui'
 import { useEffect } from "react";
+import { Sidebar } from '@coreui/coreui/dist/js/coreui.esm.min.js';
 
 export default function CoreUIProvider() {
   useEffect(() => {
-    import('@coreui/coreui').then((coreui) => {
+    const initCoreUI = async () => {
+      const { Sidebar } = await import('@coreui/coreui/dist/js/coreui.esm.min.js' as any);
+      
       document.querySelector('.header-toggler')?.addEventListener('click', () => {
         const el = document.getElementById('sidebar')
   
         if (!el) return
   
-        const sidebar = new coreui.Sidebar(el)
+        const sidebar = new Sidebar(el)
         sidebar.toggle()
       })
   
@@ -20,10 +22,10 @@ export default function CoreUIProvider() {
   
         if (!el) return
   
-        const sidebar = new coreui.Sidebar(el)
+        const sidebar = new Sidebar(el)
         sidebar.toggle()
       })
-    })
+    };
   }, []);
 
   return null;

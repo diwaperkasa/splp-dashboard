@@ -1,4 +1,4 @@
-export default async function Dashboard({
+export default async function ApiTransaction({
     children,
 }: {
     children: React.ReactNode
