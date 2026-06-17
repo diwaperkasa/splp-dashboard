@@ -75,7 +75,7 @@ export async function GET(req: NextRequest) {
         }
     )
 
-    return NextResponse.redirect(
-        new URL("/", req.url)
-    )
+    const url = process.env.APP_URL;
+
+    return NextResponse.redirect(url!);
 }
