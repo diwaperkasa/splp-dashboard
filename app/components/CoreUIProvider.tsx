@@ -7,7 +7,7 @@ export default function CoreUIProvider() {
   useEffect(() => {
     const initCoreUI = async () => {
       const { Sidebar } = await import('@coreui/coreui/dist/js/coreui.esm.min.js' as any);
-      
+
       document.querySelector('.header-toggler')?.addEventListener('click', () => {
         const el = document.getElementById('sidebar')
   
@@ -26,6 +26,8 @@ export default function CoreUIProvider() {
         sidebar.toggle()
       })
     };
+
+    initCoreUI();
   }, []);
 
   return null;
